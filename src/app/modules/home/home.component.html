@@ -1,0 +1,146 @@
+<ActionBar title="Amway" >
+    <ActionItem icon="font://&#xf0c9;" class="fas t-20" ios.position="left" android.position="left" (tap)="showMenu()">
+    </ActionItem>
+    <ActionItem icon="font://&#xf217;" class="fas t-20" ios.position="right" (tap)="navigateToCart()">
+    </ActionItem>
+    <ActionItem icon="font://&#xf007;" class="fas t-20" ios.position="right" (tap)="navigateToLogin()">
+    </ActionItem>
+</ActionBar>
+<StackLayout>
+    <SearchBar hint="Search hint" [text]="" (submit)="onButtonTap($event)" height="40"  style="padding: 5;">
+
+    </SearchBar>
+    <ScrollView orientation="vertical">
+        <StackLayout padding="5">
+            <ScrollView class="selectedContacts" orientation="horizontal">
+                <StackLayout class="container" orientation="horizontal">
+                    <GridLayout *ngFor="let i of a.slice(1, 20)" class="contact" rows="auto,auto,auto">
+                        <Label class="close" row="0" text="Hello" height="30" backgroundColor="#a9a9a9"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+            <GridLayout height="200">
+                <Carousel [items]="a" height="100%" width="100%" color="white"
+                          android:indicatorAnimation="slide" indicatorColor="#b3cde0" indicatorOffset="0, -10"
+                          showIndicator="true">
+                    <CarouselItem *ngFor="let item of a.slice(1, 5)" backgroundColor="#005b96"
+                                  verticalAlignment="middle">
+                        <GridLayout>
+                            <Image src="https://i.picsum.photos/id/3{{item}}0/200/300.jpg" stretch="aspectFill"></Image>
+                        </GridLayout>
+                    </CarouselItem>
+                </Carousel>
+            </GridLayout>
+            <StackLayout orientation="horizontal" horizontalAlignment="center" paddingBottom="5">
+                <Button class="footer-button" loaded="onLoad" textWrap="true" backgroundColor="#a9a9a9"  borderRadius="15" style="padding: 15">
+                    <FormattedString >
+                        <Span class="fas" text="&#xf007; "></Span>
+                        <Span text="発注番号で注文" fontAttributes="Bold"></Span>
+                    </FormattedString>
+                </Button>
+                <Button class="footer-button" loaded="onLoad" textWrap="true" backgroundColor="#a9a9a9" borderRadius="15" style="padding: 15">
+                    <FormattedString>
+                        <Span class="fas" text="&#xf007; "></Span>
+                        <Span text="閲覧・再注文" fontAttributes="Bold"></Span>
+                    </FormattedString>
+                </Button>
+            </StackLayout>
+            <GridLayout columns="4*,*" padding="2">
+                <Label col="0" text="キャンペイン・新製品" height="40" textAlignment="center"></Label>
+                <Button col="1" text="一覧へ" width="100%" height="40"  (tap)="onButtonTap($event)"></Button>
+            </GridLayout>
+            <ScrollView class="selectedContacts" orientation="horizontal">
+                <StackLayout class="container" orientation="horizontal" padding="5, 0">
+                    <GridLayout
+                            *ngFor="let i of a.slice(1, 20)"
+                            class="contact"
+                            rows="auto,auto,auto,auto,auto,auto"
+                            paddingRight="2"
+                    >
+                        <StackLayout orientation="vertical" width="230" >
+                                <AbsoluteLayout height="200" >
+                                    <Image src="https://i.picsum.photos/id/5{{i}}0/200/300.jpg" stretch="aspectFill"
+                                           height="200" width="100%"></Image>
+                                    <Label text="New" width="30" height="30" backgroundColor="#a52a2a" ></Label>
+                                    <GridLayout columns="*, *" backgroundColor="lightgray" height="30" top="170">
+                                        <Label text="Label 1" col="0" backgroundColor="#ff260b" height="30"
+                                               width="100%" textAlignment="center" ></Label>
+                                        <Label text="Label 2" col="1" backgroundColor="black" height="30"
+                                               textAlignment="center"></Label>
+                                    </GridLayout>
+                                </AbsoluteLayout>
+                            
+                            <StackLayout padding="5">
+                                <Label text="Label 1" height="50"  textAlignment="center"
+                                       width="100%"></Label>
+                                <GridLayout columns="*, *" backgroundColor="lightgray" height="30">
+                                    <Label text="Label 1" row="0" col="0" backgroundColor="#a9a9a9" height="30"
+                                           width="100%" textAlignment="center"></Label>
+                                    <Label text="Label 2" row="0" col="1" backgroundColor="#a9a9a9" height="30"
+                                           textAlignment="center"></Label>
+                                </GridLayout>
+                                <GridLayout columns="*, *" backgroundColor="lightgray" height="30">
+                                    <Label text="Label 1" row="0" col="0" backgroundColor="orange" height="30"
+                                           width="100%" textAlignment="center"></Label>
+                                    <Label text="Label 2" row="0" col="1" backgroundColor="green" height="30"
+                                           textAlignment="center"></Label>
+                                </GridLayout>
+                                <GridLayout columns="3*, *" backgroundColor="lightgray" height="30">
+                                    <Label text="¥6,000" col="0" fontSize="18" height="30" width="100%"
+                                           textAlignment="left"></Label>
+                                    <Label text="&#xf004;" class="fas t-20" col="1" height="30"
+                                           textAlignment="center"></Label>
+                                </GridLayout>
+                                <Label text="test test test " height="30" textAlignment="left" width="100%"></Label>
+                                <Button text="カートに入れる"  backgroundColor="DarkViolet" (tap)="onButtonTap($event)"  borderRadius="15"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+            <GridLayout columns="4*,*" padding="2">
+                <Label col="0" text="もう一度買う" height="30" textAlignment="center"></Label>
+                <Button col="1" text="一覧へ" width="100%" height="30"  (tap)="onButtonTap($event)"></Button>
+            </GridLayout>
+            <ScrollView class="selectedContacts" orientation="horizontal">
+                <StackLayout class="container" orientation="horizontal" padding="5, 0">
+                    <GridLayout
+                            *ngFor="let i of a.slice(1, 20)"
+                            class="contact"
+                            rows="auto,auto,auto,auto,auto,auto"
+                            paddingRight="2"
+                    >
+                        <StackLayout orientation="vertical" width="230" >
+                            <StackLayout padding="5">
+                                
+                                    <Image src="https://i.picsum.photos/id/3{{i}}0/200/300.jpg" stretch="aspectFill"
+                                           height="200" width="100%"></Image>
+                                
+                                <Label text="Label 1" height="50"  textAlignment="center"
+                                       width="100%" class="label"></Label>
+                                <GridLayout columns="*, *" height="30">
+                                    <Label text="Label 1" row="0" col="0" class="label"  height="30"
+                                           width="100%" textAlignment="center"></Label>
+                                    <Label text="Label 2" row="0" col="1" class="label" height="30"
+                                           textAlignment="center"></Label>
+                                </GridLayout>
+                                <StackLayout orientation="vertical"  horizontalAlignment="left">
+                                    <StarRating emptyBorderColor="white" emptyColor="gray" filledBorderColor="black" filledColor="yellow" value="3" max="5" isindicator="true"></StarRating>
+                                    <Label text="Label"></Label>
+                                </StackLayout>
+                                <GridLayout columns="3*, *" height="30">
+                                    <Label text="¥6,000" col="0" fontSize="18" height="30" width="100%"
+                                           textAlignment="left"></Label>
+                                    <Label text="&#xf004;" class="fas t-20" col="1" height="30"
+                                           textAlignment="center"></Label>
+                                </GridLayout>
+                                <Label text="test test test " height="30" textAlignment="left" width="100%"></Label>
+                                <Button text="Button" (tap)="onButtonTap($event)"  backgroundColor="DarkViolet" borderRadius="15"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

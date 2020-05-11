@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "skipLibCheck": true,
+        "lib": [
+            "es6",
+            "dom",
+            "es2015.iterable"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": [
+                "src/app/*"
+            ],
+            "@environment": [
+                "src/environments/environment"
+            ],
+            "@assets": [
+                "src/assets/*"
+            ],
+            "@config": [
+               "src/config/*"
+            ]
+        },
+      "typeRoots": [
+        "typings"
+      ]
+    },
+    "exclude": [
+        "node_modules",
+        "platforms",
+        "**/*.aot.ts"
+    ]
+}
+
