@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { registerElement } from 'nativescript-angular/element-registry';
 import { Carousel, CarouselItem } from 'nativescript-carousel';
 import Theme from '@nativescript/theme';
+import { EventData } from 'tns-core-modules/data/observable';
+import { Page } from 'tns-core-modules/ui/page';
+import { View } from 'tns-core-modules/ui/core/view';
+import { ScrollView } from 'tns-core-modules/ui/scroll-view';
+
+import { Animation, AnimationDefinition, CubicBezierAnimationCurve } from 'tns-core-modules/ui/animation';
+import { SwipeGestureEventData, SwipeDirection, PanGestureEventData, GestureStateTypes } from 'tns-core-modules/ui/gestures/gestures';
+
 
 registerElement('Carousel', () => Carousel);
 registerElement('CarouselItem', () => CarouselItem);
@@ -23,11 +31,23 @@ export class HomeComponent implements OnInit {
         {title: 'Image 3 (assets folder)', file: '~/assets/sea-sunrise.jpg'},
         {title: 'Image 4 (URL)', url: 'https://unsplash.it/400/300/?image=868'},
         {title: 'Image 5 (URL)', url: 'https://unsplash.it/400/300/?image=870'},
-        {title: 'Image 6 (URL)', url: 'https://unsplash.it/400/300/?image=876'},
+        {title: 'Image 6 (URL)', url: 'https://unsplash.it/400/300/?image=876'}
     ];
+
+    wrapperLayout: View = undefined;
+    scrollView: ScrollView = undefined;
+    bar: View = undefined;
+    minStretch = 0;
+    maxStretch = 40;
+    animDuration = 250;
+    animation: Animation = undefined;
+    prevTranslateY = 0;
+    prevScale = 0;
+
 
     constructor() {
         //
+
     }
 
     ngOnInit(): void {
@@ -45,11 +65,10 @@ export class HomeComponent implements OnInit {
     }
 
     navigateToLogin() {
-        // if (this.themeMode) {
-        //     Theme.setMode(Theme.Dark);
-        // } else {
-        //     Theme.setMode(Theme.Light);
-        // }
+        console.log('navigateToLogin');
+    }
+
+    changeTheme() {
         this.themeMode = !this.themeMode;
         Theme.toggleMode(this.themeMode);
         console.log('navigateToLogin');
@@ -58,6 +77,5 @@ export class HomeComponent implements OnInit {
     onButtonTap(event): void {
         console.log('Button was pressed');
     }
-
 
 }

@@ -1,4 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { SharedModule } from '@app/shared/shared.module';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { NativeScriptMaterialCardViewModule } from 'nativescript-material-cardview/angular';
 import { NativeScriptUIListViewModule } from 'nativescript-pro-ui/listview/angular';
@@ -11,7 +12,8 @@ import { ItemDetailComponent } from '../cart/item-detail/item-detail.component';
         NativeScriptUIListViewModule,
         NativeScriptCommonModule,
         NativeScriptMaterialCardViewModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        SharedModule
     ],
     declarations: [
         HomeComponent,

@@ -16,6 +16,7 @@ android {
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
+ 
   }
 }
 

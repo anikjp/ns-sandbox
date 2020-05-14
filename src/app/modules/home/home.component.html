@@ -1,17 +1,16 @@
-<ActionBar title="Amway" >
-    <ActionItem icon="font://&#xf0c9;" class="fas t-20" ios.position="left" android.position="left" (tap)="showMenu()">
-    </ActionItem>
-    <ActionItem icon="font://&#xf217;" class="fas t-20" ios.position="right" (tap)="navigateToCart()">
-    </ActionItem>
-    <ActionItem icon="font://&#xf007;" class="fas t-20" ios.position="right" (tap)="navigateToLogin()">
-    </ActionItem>
+<ActionBar title="Amway" android:horizontalAlignment="center">
+    <NavigationButton text="Wont Show" icon="font://&#xf0c9;" class="fas" ></NavigationButton>
+    <ActionItem icon="font://&#xf0c9;" class="fas t-20" ios.position="left" android.position="left" (tap)="onButtonTap($event)" android:visibility="collapse"></ActionItem>
+    <ActionItem icon="font://&#xf217;" class="fas t-20" ios.position="right" (tap)="onButtonTap($event)" ></ActionItem>
+    <ActionItem icon="font://&#xf007;" class="fas t-20" ios.position="right" (tap)="changeTheme()"></ActionItem>
 </ActionBar>
-<StackLayout>
-    <SearchBar hint="Search hint" [text]="" (submit)="onButtonTap($event)" height="40"  style="padding: 5;">
 
-    </SearchBar>
+<StackLayout>
+
     <ScrollView orientation="vertical">
+
         <StackLayout padding="5">
+
             <ScrollView class="selectedContacts" orientation="horizontal">
                 <StackLayout class="container" orientation="horizontal">
                     <GridLayout *ngFor="let i of a.slice(1, 20)" class="contact" rows="auto,auto,auto">
@@ -19,6 +18,7 @@
                     </GridLayout>
                 </StackLayout>
             </ScrollView>
+
             <GridLayout height="200">
                 <Carousel [items]="a" height="100%" width="100%" color="white"
                           android:indicatorAnimation="slide" indicatorColor="#b3cde0" indicatorOffset="0, -10"

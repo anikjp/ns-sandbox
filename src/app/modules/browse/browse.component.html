@@ -1,14 +1,35 @@
-<ActionBar title="Amway" >
-    <ActionItem icon="font://&#xf0c9;" class="fas t-20" ios.position="left" >
-    </ActionItem>
-    <ActionItem icon="font://&#xf217;" class="fas t-20" ios.position="right" >
-    </ActionItem>
-    <ActionItem icon="font://&#xf007;" class="fas t-20" ios.position="right" >
-    </ActionItem>
+<ActionBar title="Amway" android:horizontalAlignment="center">
+    <NavigationButton text="Wont Show" icon="font://&#xf0c9;" class="fas"></NavigationButton>
+    <ActionItem icon="font://&#xf0c9;" class="fas t-20" ios.position="left" android.position="left"
+                android:visibility="collapse"></ActionItem>
+    <ActionItem icon="font://&#xf217;" class="fas t-20" ios.position="right" ></ActionItem>
+    <ActionItem icon="font://&#xf007;" class="fas t-20" ios.position="right" ></ActionItem>
 </ActionBar>
-<StackLayout orientation="vertical"  backgroundColor="lightgray">
-    <AbsoluteLayout height="210" backgroundColor="lightgray">
-        <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red" ></Label>
-    </AbsoluteLayout>
+
+<StackLayout backgroundColor="lightgray">
+    <ScrollView orientation="vertical">
+        <StackLayout>
+            <Button text="showSuccess" (tap)="showSuccess()"></Button>
+            <Button text="showSuccessCustomEffects" (tap)="showSuccessCustomEffects()" ></Button>
+            <Button text="showSuccessDelay" (tap)="showSuccessDelay()"></Button>
+            <Button text="showError" (tap)="showError()"></Button>
+            <Button text="showNotice" (tap)="showNotice()"></Button>
+            <Button text="showWarning" (tap)="showWarning()"></Button>
+            <Button text="showInfo" (tap)="showInfo()"></Button>
+            <Button text="showEdit" (tap)="showEdit()"></Button>
+            <Button text="showQuestion" (tap)="showQuestion()"></Button>
+            <Button text="showCustomImage" (tap)="showCustomImage()"></Button>
+            <Button text="showWaiting" (tap)="showWaiting()"></Button>
+            <Button text="showCustomButtonTimer" (tap)="showCustomButtonTimer()"></Button>
+            <Button text="showCustomButtonTimer" (tap)="showCustomButtonTimer()"></Button>
+            <Button text="showCustomButtons" (tap)="showCustomButtons()"></Button>
+            <Button text="showCustomWidth" (tap)="showCustomWidth()"></Button>
+            <Button text="customText" (tap)="customText()"></Button>
+            <Button text="showTextField" (tap)="showTextField()"></Button>
+            <Button text="showSwitch" (tap)="showSwitch()"></Button>
+            <Button text="showCustomView" (tap)="showCustomView()"></Button>
+            <Button text="reset" (tap)="reset()"></Button>
+        </StackLayout>
+    </ScrollView>
 </StackLayout>
 

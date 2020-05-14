@@ -160,6 +160,7 @@
       true,
       "attribute",
       [
+        "amway",
         "app",
         "ns",
         "pt"
@@ -170,6 +171,7 @@
       true,
       "element",
       [
+        "amway",
         "app",
         "ns",
         "pt"

@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SharedModule } from '@app/shared/shared.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
@@ -21,6 +22,7 @@ import '@app/rxjs-imports';
         AppComponent
     ],
     imports: [
+        SharedModule,
         NativeScriptMaterialCardViewModule,
         NativeScriptModule,
         NativeScriptHttpClientModule,
